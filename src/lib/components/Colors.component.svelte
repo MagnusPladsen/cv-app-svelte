@@ -1,17 +1,21 @@
 <script lang="ts">
 	import ColorPicker from 'svelte-awesome-color-picker';
 	import { Button } from '$lib/components/ui/button';
-
-	interface Props {
-		handleColorChange: (color: string) => void;
-		hex: string;
-		handleHoverColorChange: (color: string | undefined) => void;
-		handleResetColor: () => void;
-	}
-
-	let { handleColorChange, hex, handleHoverColorChange, handleResetColor }: Props = $props();
+	import { color, initialColor } from '../../shared.svelte';
 
 	let showColorPicker = $state<boolean>(false);
+
+	function handleColorChange(newColor: string) {
+		color.active = newColor;
+	}
+
+	function handleHoverColorChange(newHoverColor: string | undefined) {
+		color.hoverColor = newHoverColor;
+	}
+
+	function handleResetColor() {
+		color.active = initialColor;
+	}
 
 	function handleColorPickerInput(e: CustomEvent) {
 		console.log(e);
@@ -54,7 +58,7 @@
 				position="responsive"
 				isDialog={false}
 				isOpen
-				{hex}
+				hex={color.active}
 				on:input={handleColorPickerInput}
 			/>
 			<button class="bg-white text-black" onclick={() => (showColorPicker = false)}>Close</button>

@@ -1,28 +1,12 @@
 <script lang="ts">
 	import Header from '@/components/Header.component.svelte';
 	import Colors from '@/components/Colors.component.svelte';
-
-	const initialColor = '#1E6691';
-
-	let hex = $state<string>(initialColor);
-	let hoverColor = $state<string | undefined>(undefined);
+	import { color, initialColor } from '../shared.svelte';
 
 	let displayColor = $state<string>(initialColor);
 
-	function handleColorChange(newColor: string) {
-		hex = newColor;
-	}
-
-	function handleHoverColorChange(newHoverColor: string | undefined) {
-		hoverColor = newHoverColor;
-	}
-
-	function handleResetColor() {
-		hex = initialColor;
-	}
-
 	$effect(() => {
-		displayColor = hoverColor ?? hex;
+		displayColor = color.hoverColor ?? color.active;
 	});
 </script>
 
@@ -33,7 +17,7 @@
 		<div class="flex min-h-screen w-full max-w-[600px] flex-col gap-6">
 			<Header />
 			<div class="flex max-w-[550px] flex-col gap-16">
-				<Colors {handleColorChange} {hex} {handleHoverColorChange} {handleResetColor} />
+				<Colors  />
 				<p style="color: {displayColor}">Test</p>
 			</div>
 		</div>
