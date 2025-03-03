@@ -1,6 +1,6 @@
-interface Color {
+interface ColorTheme {
 	active: string;
 	hoverColor: string | undefined;
 }
 
-export type { Color };
+export type { ColorTheme };

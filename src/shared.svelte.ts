@@ -1,8 +1,22 @@
-import type { Color } from '@/types/color.types';
+import type { ColorTheme, CVFormData } from '@/types';
 
 export const initialColor = '#1E6691';
 
-export const color = $state<Color>({
+export const colorTheme = $state<ColorTheme>({
 	active: initialColor,
 	hoverColor: undefined
+});
+
+export const cv = $state<CVFormData>({
+	name: '',
+	position: '',
+	about: '',
+	email: '',
+	phone: '',
+	address: '',
+	website: '',
+	linkedin: '',
+	github: '',
+	education: [],
+	experience: []
 });

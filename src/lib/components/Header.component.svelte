@@ -1,1 +1,1 @@
-<h1 class="text-4xl md:text-6xl font-bold mb-4 min-h-[70px]">Make your CV</h1>
+<h1 class="mb-4 text-4xl font-bold md:text-6xl">Make your CV</h1>

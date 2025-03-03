@@ -352,7 +352,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@internationalized/date@npm:^3.5.0, @internationalized/date@npm:^3.5.1":
+"@internationalized/date@npm:^3.5.0, @internationalized/date@npm:^3.5.1, @internationalized/date@npm:^3.7.0":
   version: 3.7.0
   resolution: "@internationalized/date@npm:3.7.0"
   dependencies:
@@ -977,6 +977,7 @@ __metadata:
   dependencies:
     "@eslint/compat": "npm:^1.2.5"
     "@eslint/js": "npm:^9.18.0"
+    "@internationalized/date": "npm:^3.7.0"
     "@sveltejs/adapter-auto": "npm:^4.0.0"
     "@sveltejs/kit": "npm:^2.16.0"
     "@sveltejs/vite-plugin-svelte": "npm:^5.0.0"
@@ -989,6 +990,7 @@ __metadata:
     eslint-config-prettier: "npm:^10.0.1"
     eslint-plugin-svelte: "npm:^3.0.0"
     globals: "npm:^16.0.0"
+    lucide-svelte: "npm:^0.477.0"
     prettier: "npm:^3.4.2"
     prettier-plugin-svelte: "npm:^3.3.3"
     prettier-plugin-tailwindcss: "npm:^0.6.10"
@@ -2209,6 +2211,15 @@ __metadata:
   version: 10.4.3
   resolution: "lru-cache@npm:10.4.3"
   checksum: 10c0/ebd04fbca961e6c1d6c0af3799adcc966a1babe798f685bb84e6599266599cd95d94630b10262f5424539bc4640107e8a33aa28585374abf561d30d16f4b39fb
+  languageName: node
+  linkType: hard
+
+"lucide-svelte@npm:^0.477.0":
+  version: 0.477.0
+  resolution: "lucide-svelte@npm:0.477.0"
+  peerDependencies:
+    svelte: ^3 || ^4 || ^5.0.0-next.42
+  checksum: 10c0/18308219ce1b763c232bf24f42447979f208c2048de3de84da56c020b3277e62f22c3925959be620f0efb1708bb3ed6de88ba65c3fac01d102a558e519740071
   languageName: node
   linkType: hard
 
