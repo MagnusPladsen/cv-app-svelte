@@ -1,39 +1,54 @@
-<script lang=ts>
+<script lang="ts">
+	import { Plus, X } from 'lucide-svelte';
+	import { cv } from '../../../shared.svelte';
+	import DateRangePicker from '../DateRangePicker/DateRangePicker.component.svelte';
+	import FormInput from './FormInput.component.svelte';
+	import { Button } from '../ui/button';
 
+	const removeEducation = (index: number) => {
+		if (cv.educations.length === 1) return;
+		cv.educations = cv.educations.filter((_, i) => i !== index);
+	};
+
+	const addEducation = () => {
+		cv.educations.push({
+			schoolName: '',
+			schoolDuration: undefined
+		});
+	};
 </script>
 
 <div class="flex flex-col gap-2">
-    <p class="text-xl ">Education</p>
-    <div class=" border-b-[0.5px] border-white w-full mb-4" ></div>
+	<p class="text-xl">Education</p>
+	<div class="mb-4 w-full border-b-[0.5px] border-white"></div>
 
-    {education.map((education, index) => (
-      <div key={index} class="flex flex-col gap-2">
-        <FormInput
-          label="School name"
-          name={`education.${index}.schoolName`}
-          class="w-full"
-        />
+	{#each cv.educations as education, index (education)}
+		<div class="flex flex-col gap-2">
+			<FormInput
+				label="School name"
+				name={`education.${index}.schoolName`}
+				bind:value={education.schoolName}
+				containerClass="w-[350px]"
+			/>
 
-        <FormDateRangePicker
-          label="School duration"
-          name={`education.${index}.schoolDuration`}
-        />
+			<div class="">
+				<label for={'education.${index}.schoolDuration'} class="text-lg font-bold">
+					Duration
+				</label>
+				<DateRangePicker bind:value={education.schoolDuration} containerClass="w-[350px]" />
+			</div>
 
-        {index > 0 && (
-          <Button
-            size="sm"
-            variant="destructive"
-            onClick={() => removeEducation(index)}
-          >
-            <X class="w-4 h-4" />
-            Remove
-          </Button>
-        )}
-      </div>
-    ))}
+			{#if index > 0}
+				<Button size="sm" variant="destructive" onclick={() => removeEducation(index)}>
+					<X class="h-4 w-4" />
+					Remove
+				</Button>
+			{/if}
+		</div>
+	{/each}
 
-    <Button variant="outline" onClick={addEducation} class="mt-4">
-      <Plus class="w-4 h-4" />
-      Add education
-    </Button>
-  </div>
+	<Button variant="outline" onclick={addEducation} class="mt-4 w-fit">
+		<Plus class="h-4 w-4" />
+		Add education
+	</Button>
+</div>

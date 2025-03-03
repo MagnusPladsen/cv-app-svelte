@@ -19,7 +19,7 @@
 
 <div class="flex flex-col gap-2">
 	<p class="text-xl">Select your primary color</p>
-	<div class=" mb-4 w-full border-b-[0.5px] border-white"></div>
+	<div class="mb-5 w-full border-b-[0.5px] border-white"></div>
 	<div class="flex flex-row items-center gap-3">
 		{#each themeColors as color, i (color)}
 			<input

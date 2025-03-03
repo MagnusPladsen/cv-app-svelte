@@ -43,6 +43,7 @@
 	},
 	"packageManager": "yarn@4.7.0",
 	"dependencies": {
-		"lucide-svelte": "^0.477.0"
+		"lucide-svelte": "^0.477.0",
+		"svelte-radix": "^2.0.1"
 	}
 }

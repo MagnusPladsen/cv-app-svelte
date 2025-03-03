@@ -17,6 +17,17 @@ export const cv = $state<CVFormData>({
 	website: '',
 	linkedin: '',
 	github: '',
-	education: [],
-	experience: []
+	educations: [
+		{
+			schoolName: '',
+			schoolDuration: undefined
+		}
+	],
+	experiences: [
+		{
+			experienceName: '',
+			experiencePosition: '',
+			experienceDuration: undefined
+		}
+	]
 });

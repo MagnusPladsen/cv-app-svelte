@@ -1,13 +1,14 @@
-import type { DateRange } from "bits-ui";
+import type { DateRange } from 'bits-ui';
 
 interface Education {
 	schoolName: string;
-	schoolDuration: DateRange;
+	schoolDuration: DateRange | undefined;
 }
 
 interface Experience {
 	experienceName: string;
-	experienceDuration: DateRange;
+	experiencePosition: string;
+	experienceDuration: DateRange | undefined;
 }
 
 interface CVFormData {
@@ -20,8 +21,8 @@ interface CVFormData {
 	website: string;
 	linkedin: string;
 	github: string;
-	education: Education[];
-	experience: Experience[];
+	educations: Education[];
+	experiences: Experience[];
 }
 
 export type { CVFormData, Education, Experience };

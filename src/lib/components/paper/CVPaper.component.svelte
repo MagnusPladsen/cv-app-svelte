@@ -65,17 +65,17 @@
 				</p>
 			</div>
 
-			{#if cv.education[0]?.schoolName.length > 0}
+			{#if cv.educations[0]?.schoolName.length > 0}
 				<LineSeperator />
 				<div class="flex flex-col pt-6">
 					<p class="font-bold">Education</p>
 
 					<div class="flex flex-col gap-2 text-black">
-						{#each cv.education as education (education)}
+						{#each cv.educations as education (education)}
 							{#if education.schoolName.length > 0}
 								<div>
-									<p class="text-sm">{education.schoolName}</p>
-									{#if education.schoolDuration.start && education.schoolDuration.end}
+									<p class="text-sm font-bold">{education.schoolName}</p>
+									{#if education.schoolDuration?.start && education.schoolDuration?.end}
 										<p class="text-xs text-muted-foreground">
 											{dateToLocalDateString(education.schoolDuration.start)} -{' '}
 											{dateToLocalDateString(education.schoolDuration.end)}
@@ -88,18 +88,19 @@
 				</div>
 			{/if}
 
-			{#if cv.experience[0]?.experienceName.length > 0}
+			{#if cv.experiences[0]?.experienceName.length > 0}
 				<LineSeperator />
 				<div class="flex flex-col pt-6">
 					<p class="font-bold">Experience</p>
 
 					<div class="flex flex-col gap-2 text-black">
-						{#each cv.experience as experience (experience)}
+						{#each cv.experiences as experience (experience)}
 							{#if experience.experienceName.length > 0}
 								<div>
-									<p class="text-sm">{experience.experienceName}</p>
+									<p class="text-sm font-bold">{experience.experienceName}</p>
+									<p class="text-sm">{experience.experiencePosition}</p>
 
-									{#if experience.experienceDuration.start && experience.experienceDuration.end}
+									{#if experience.experienceDuration?.start && experience.experienceDuration?.end}
 										<p class="text-xs text-muted-foreground">
 											{dateToLocalDateString(experience.experienceDuration.start)} -{' '}
 											{dateToLocalDateString(experience.experienceDuration.end)}

@@ -1,5 +1,7 @@
 <script lang="ts">
 	import Colors from '@/components/Colors.component.svelte';
+	import Education from '@/components/forms/Education.component.svelte';
+	import Experience from '@/components/forms/Experience.component.svelte';
 	import PersonalInformation from '@/components/forms/PersonalInformation.component.svelte';
 	import Header from '@/components/Header.component.svelte';
 	import CVPaper from '@/components/paper/CVPaper.component.svelte';
@@ -14,8 +16,8 @@
 			<Colors />
 			<div class="mt-8 flex max-w-[600px] flex-col gap-16 overflow-y-auto">
 				<PersonalInformation />
-				<!-- <Education />
-				<Experience /> -->
+				<Education />
+				<Experience />
 			</div>
 		</div>
 
